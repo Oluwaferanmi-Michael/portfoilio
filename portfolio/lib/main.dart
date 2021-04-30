@@ -9,10 +9,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Portfolio',
       theme: ThemeData(
-        
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.blue,  
       ),
       home: MyHomePage(title: ''),
     );
@@ -54,47 +54,41 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Stack(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        children: <Widget>[
-          Container(
-            color: Theme.of(context).primaryColor,
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(100)
-            )
-            ),
-          Column()
-          ]
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
+      body: SingleChildScrollView(
+        child: SafeArea(
+          minimum: EdgeInsets.all(42),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 53,
+                height: 18,
+                decoration: BoxDecoration(
+                  
+                  color: Theme.of(context).primaryColor,
+                  borderRadius: BorderRadius.circular(300)
+                  )
+              ),
+              
+              SizedBox(height: 16,),
 
+              Text('Oluwaferanmi Michael',
+              style: TextStyle(
+                fontSize: 37,
+                fontWeight: FontWeight.w800,
+                color: Colors.black)
+              ),
+
+              SizedBox(height: 16,),
+
+              Text(''),
+
+              Text('Tools')
+            ],
+          ),
         ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),
     );
   }
 }
