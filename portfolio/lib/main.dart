@@ -12,7 +12,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Portfolio',
       theme: ThemeData(
-        primaryColor: Colors.blue,  
+        primaryColor: Colors.blue,
+        
       ),
       home: MyHomePage(title: ''),
     );
@@ -51,6 +52,17 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  List <String> tools = [
+    'Adobe Xd',
+    'Microsoft Office',
+    'Flutter',
+    'Figma',
+    'iZotope Rx8',
+    'Audacity',
+    'Git/GitHub',
+    'Python',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +77,6 @@ class _MyHomePageState extends State<MyHomePage> {
                 width: 53,
                 height: 18,
                 decoration: BoxDecoration(
-                  
                   color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(300)
                   )
@@ -82,9 +93,100 @@ class _MyHomePageState extends State<MyHomePage> {
 
               SizedBox(height: 16,),
 
-              Text(''),
+              Text('Versatile Software Developer with 2 years of experience in Flutter programming and Software engineering. Self-directed leader with expertise in Frontend. Talented at cultivating collaborative and supportive team environment. I\'m also a Creative UI Developer with 5 years facilitating and supporting human interactions with complex systems and software. Maintains user-centric designs while adhering to prescribed interface principals and related development goals.',
+                style: TextStyle(
+                  height: 2,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w300,
+                )
+              ),
 
-              Text('Tools')
+              SizedBox(height: 24,),
+
+              Text('Tools',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w800
+                )),
+
+              SizedBox(height: 16,),
+
+              // ListView.builder(
+              //   itemBuilder: (BuildContext context, int index){
+              //     return Container(
+              //       child: Text('$tools',
+              //         style: TextStyle(
+              //           fontSize: 16),),
+              //       width: 691,
+              //       height: 84,
+              //       decoration: BoxDecoration(
+              //         borderRadius: BorderRadius.circular(10),
+              //         boxShadow: [
+              //           BoxShadow(
+              //             color: Colors.black26,
+              //             blurRadius: 10,
+              //             spreadRadius: 5,
+              //             offset: Offset(10, 10)
+              //           )
+              //         ]
+              //       )
+              //     );
+              //   },
+              //   scrollDirection: Axis.horizontal,
+              //   itemCount: tools.length,
+              // ),
+
+            
+              Text('Social Skills',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w800
+                )),
+
+              SizedBox(height: 16,),
+
+              Wrap(spacing: 8,
+                children: [
+                  Chip(
+                    label: Text('Good Communication'),
+                    backgroundColor: Color(0x000000),
+                    side: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 1)
+                    ,),
+                    Chip(
+                    label: Text('Team Spirit'),
+                    backgroundColor: Color(0x000000),
+                    side: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 1)
+                    ,),
+                    Chip(
+                    label: Text('Creative'),
+                    backgroundColor: Color(0x000000),
+                    side: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 1)
+                    ,),
+                    Chip(
+                    label: Text('Open Minded'),
+                    backgroundColor: Color(0x000000),
+                    side: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 1)
+                    ,),
+                    Chip(
+                    label: Text('Good Communication'),
+                    backgroundColor: Color(0x000000),
+                    side: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 1)
+                    ,),
+                ],
+              ),
+
             ],
           ),
         ),
