@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Portfolio',
       theme: ThemeData(
         primaryColor: Colors.blue,
+        accentColor: Color(0xFF4978E6),
         backgroundColor: Colors.white
       ),
       home: MyHomePage(),
@@ -51,6 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
       
   //   });
   // }
+  
+  
 
   List <String> tools = [
     'Adobe Xd',
@@ -65,7 +70,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    Color bg = Theme.of(context).backgroundColor;
+    Color pc = Theme.of(context).primaryColor;
+    Color ac = Theme.of(context).accentColor;
+
     return Scaffold(
+      backgroundColor: bg,
       body: SingleChildScrollView(
         child: Stack(
           children: [
@@ -76,14 +87,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 300,
                     height: 300,
                     decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
+                      color: pc,
                       borderRadius: BorderRadius.circular(300)
                       )
                   ),
             ),
 
-            Padding(
-              padding: const EdgeInsets.all(42.0),
+            SafeArea(
+              minimum: const EdgeInsets.all(42.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -93,13 +104,15 @@ class _MyHomePageState extends State<MyHomePage> {
                     width: 53,
                     height: 18,
                     decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
+                      gradient: LinearGradient(colors: [ac, pc]),
+                      color: pc,
                       borderRadius: BorderRadius.circular(300)
                       )
                   ),
                   
                   SizedBox(height: 16,),
 
+                  // Developer Brief
                   Text('Oluwaferanmi Michael',
                   style: TextStyle(
                     fontSize: 37,
@@ -119,6 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   SizedBox(height: 24,),
 
+                  // Toolset Section
                   Text('Tools',
                     style: TextStyle(
                       fontSize: 20,
@@ -130,61 +144,63 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   SizedBox(
                     height: 100,
-
                     child: ListView.builder(
                     itemBuilder: (BuildContext context, int index){
                       return Padding(
-                        padding: const EdgeInsets.only(right: 16.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                         child: Container(
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: const EdgeInsets.only(left: 12.0),
+                                padding: const EdgeInsets.only(left: 16.0),
                                 child: Text('Adobe',
                                   style: TextStyle(
                                     fontSize: 16),),
                               ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                children: [
-                                  Container(
-                                    width: 10,
-                                    height: 10,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(30))
-                                    ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
                                     Container(
-                                    width: 10,
-                                    height: 10,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(30))
-                                    ),
-                                    Container(
-                                    width: 10,
-                                    height: 10,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(30))
-                                    ),
-                                    Container(
-                                    width: 10,
-                                    height: 10,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(30))
-                                    ),
-                                    Container(
-                                    width: 10,
-                                    height: 10,
-                                    decoration: BoxDecoration(
-                                      color: Theme.of(context).primaryColor,
-                                      borderRadius: BorderRadius.circular(30))
-                                    ),
-                                ],
+                                      width: 10,
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        color: pc,
+                                        borderRadius: BorderRadius.circular(30))
+                                      ),
+                                      Container(
+                                      width: 10,
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        color: pc,
+                                        borderRadius: BorderRadius.circular(30))
+                                      ),
+                                      Container(
+                                      width: 10,
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        color: pc,
+                                        borderRadius: BorderRadius.circular(30))
+                                      ),
+                                      Container(
+                                      width: 10,
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        color: pc,
+                                        borderRadius: BorderRadius.circular(30))
+                                      ),
+                                      Container(
+                                      width: 10,
+                                      height: 10,
+                                      decoration: BoxDecoration(
+                                        color: pc,
+                                        borderRadius: BorderRadius.circular(30))
+                                      ),
+                                  ],
+                                ),
                               )],
                           ),
                           width: 128,
@@ -195,9 +211,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.black12,
-                                blurRadius: 25,
-                                spreadRadius: 5,
-                                offset: Offset(10, 10)
+                                blurRadius: 10,
+                                spreadRadius: 1,
+                                offset: Offset(5, 5)
                               )
                             ]
                           )
@@ -210,7 +226,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),),
 
                   SizedBox(height: 24,),
-                
+
+
+                  // Social Skills Section
                   Text('Social Skills',
                     style: TextStyle(
                       fontSize: 20,
@@ -224,58 +242,58 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Chip(
                         label: Text('Good Communication'),
-                        backgroundColor: Color(0x000000),
+                        backgroundColor: bg,
                         side: BorderSide(
-                          color: Theme.of(context).primaryColor,
+                          color: pc,
                           width: 1)
                         ,),
                         Chip(
                         label: Text('Team Spirit'),
-                        backgroundColor: Color(0x000000),
+                        backgroundColor: bg,
                         side: BorderSide(
-                          color: Theme.of(context).primaryColor,
+                          color: pc,
                           width: 1)
                         ,),
                         Chip(
                         label: Text('Creative'),
-                        backgroundColor: Color(0x000000),
+                        backgroundColor: bg,
                         side: BorderSide(
-                          color: Theme.of(context).primaryColor,
+                          color: pc,
                           width: 1)
                         ,),
                         Chip(
                         label: Text('Open Minded'),
-                        backgroundColor: Color(0x000000),
+                        backgroundColor: bg,
                         side: BorderSide(
-                          color: Theme.of(context).primaryColor,
+                          color: pc,
                           width: 1)
                         ,),
                         Chip(
                         label: Text('Good Communication'),
-                        backgroundColor: Color(0x000000),
+                        backgroundColor: bg,
                         side: BorderSide(
-                          color: Theme.of(context).primaryColor,
+                          color: pc,
                           width: 1)
                         ,),
                         Chip(
                         label: Text('Responsible'),
-                        backgroundColor: Color(0x000000),
+                        backgroundColor: bg,
                         side: BorderSide(
-                          color: Theme.of(context).primaryColor,
+                          color: pc,
                           width: 1)
                         ,),
                         Chip(
                         label: Text('Problem Solver'),
-                        backgroundColor: Color(0x000000),
+                        backgroundColor: bg,
                         side: BorderSide(
-                          color: Theme.of(context).primaryColor,
+                          color: pc,
                           width: 1)
                         ,),
                         Chip(
                         label: Text('Language Fluency'),
-                        backgroundColor: Color(0x000000),
+                        backgroundColor: bg,
                         side: BorderSide(
-                          color: Theme.of(context).primaryColor,
+                          color: pc,
                           width: 1)
                         ,),
                     ],
@@ -283,6 +301,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   SizedBox(height: 24,),
                 
+                  // Education Section
                   Text('Education',
                     style: TextStyle(
                       fontSize: 20,
@@ -326,16 +345,18 @@ class _MyHomePageState extends State<MyHomePage> {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black12,
-                        blurRadius: 25,
-                        spreadRadius: 5,
-                        offset: Offset(10, 10)
+                        blurRadius: 10,
+                        spreadRadius: 2,
+                        offset: Offset(5, 5)
                         )
                       ]
                     ),
                   ),
 
                   SizedBox(height: 24,),
-                
+    
+
+                  // Industrial Section
                   Text('Industrial Experirence',
                     style: TextStyle(
                       fontSize: 20,
@@ -344,7 +365,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     )),
 
                   SizedBox(height: 16,),
-
+                  
                   Container(
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
@@ -379,22 +400,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black12,
-                        blurRadius: 25,
-                        spreadRadius: 5,
-                        offset: Offset(10, 10)
+                        blurRadius: 10,
+                        spreadRadius: 2,
+                        offset: Offset(5, 5)
                         )
                       ]
                     ),
                   ),
 
+                  // Dashatar
                   Image.asset('assets/DevDashatar.png'),
 
                   SizedBox(height: 24,),
 
+                  // Final Comment
                   Center(
                     child: Text('Happy to Build',
                       style: TextStyle(
-                        color: Theme.of(context).primaryColor),),
+                        color: pc),),
                   )
 
                 ],
