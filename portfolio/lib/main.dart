@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
       title: 'Portfolio',
       theme: ThemeData(
         primaryColor: Colors.blue,
-        
+        backgroundColor: Colors.white
       ),
-      home: MyHomePage(title: ''),
+      home: MyHomePage(),
     );
   }
 }
@@ -39,18 +39,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  // int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
+  // void _incrementCounter() {
+  //   setState(() {
+  //     // This call to setState tells the Flutter framework that something has
+  //     // changed in this State, which causes it to rerun the build method below
+  //     // so that the display can reflect the updated values. If we changed
+  //     // _counter without calling setState(), then the build method would not be
+  //     // called again, and so nothing would appear to happen.
       
-    });
-  }
+  //   });
+  // }
 
   List <String> tools = [
     'Adobe Xd',
@@ -190,13 +190,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   );
                 },
                 shrinkWrap: true,
-
-                // padding: EdgeInsetsGeometry.infinity,
                 scrollDirection: Axis.horizontal,
                 itemCount: tools.length,
               ),),
 
-              SizedBox(height: 16,),
+              SizedBox(height: 24,),
             
               Text('Social Skills',
                 style: TextStyle(
@@ -244,10 +242,31 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Theme.of(context).primaryColor,
                       width: 1)
                     ,),
+                    Chip(
+                    label: Text('Responsible'),
+                    backgroundColor: Color(0x000000),
+                    side: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 1)
+                    ,),
+                    Chip(
+                    label: Text('Problem Solver'),
+                    backgroundColor: Color(0x000000),
+                    side: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 1)
+                    ,),
+                    Chip(
+                    label: Text('Language Fluency'),
+                    backgroundColor: Color(0x000000),
+                    side: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 1)
+                    ,),
                 ],
               ),
 
-              SizedBox(height: 16,),
+              SizedBox(height: 24,),
             
               Text('Education',
                 style: TextStyle(
@@ -259,27 +278,30 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(height: 16,),
               
               Container(
-                child: Column(children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                    Expanded(
-                      flex: 1,
-                      child: Text('Kwara State University',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold
-                        ),)),
-                    Text('2017-2021',
-                        style: TextStyle(
-                          fontSize: 16,))
-                  ],),
-                  Text('B.Sc Computer Science',
-                        style: TextStyle(
-                          fontSize: 12,))
-                ],
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                      Expanded(
+                        flex: 1,
+                        child: Text('Kwara State University',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold
+                          ),)),
+                      Text('2017-2021',
+                          style: TextStyle(
+                            fontSize: 16,))
+                    ],),
+                    Text('B.Sc Computer Science',
+                          style: TextStyle(
+                            fontSize: 12,))
+                  ],
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
                 ),
                 width: 345,
                 height: 72,
@@ -297,7 +319,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              SizedBox(height: 16,),
+              SizedBox(height: 24,),
             
               Text('Industrial Experirence',
                 style: TextStyle(
@@ -309,27 +331,30 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(height: 16,),
 
               Container(
-                child: Column(children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                    Expanded(
-                      flex: 1,
-                      child: Text('e86 Limited',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold
-                        ),)),
-                    Text('2020-2021',
-                        style: TextStyle(
-                          fontSize: 16,))
-                  ],),
-                  Text('Sales Intern',
-                        style: TextStyle(
-                          fontSize: 12,))
-                ],
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                      Expanded(
+                        flex: 1,
+                        child: Text('e86 Limited',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold
+                          ),)),
+                      Text('2020-2021',
+                          style: TextStyle(
+                            fontSize: 16,))
+                    ],),
+                    Text('Sales Intern',
+                          style: TextStyle(
+                            fontSize: 12,))
+                  ],
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                  ),
                 ),
                 width: 345,
                 height: 72,
@@ -349,11 +374,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
               Image.asset('assets/DevDashatar.png'),
 
-              SizedBox(height: 16,),
+              SizedBox(height: 24,),
 
-              Text('Happy to Build',
-                style: TextStyle(
-                  color: Theme.of(context).primaryColor),)
+              Center(
+                child: Text('Happy to Build',
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor),),
+              )
 
             ],
           ),
