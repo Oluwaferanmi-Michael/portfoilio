@@ -67,323 +67,340 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: SafeArea(
-          minimum: EdgeInsets.all(42),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                width: 53,
-                height: 18,
-                decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  borderRadius: BorderRadius.circular(300)
-                  )
-              ),
-              
-              SizedBox(height: 16,),
+        child: Stack(
+          children: [
+            Positioned(
+              top: 400,
+              left: 250,
+              child: Container(
+                    width: 300,
+                    height: 300,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).primaryColor,
+                      borderRadius: BorderRadius.circular(300)
+                      )
+                  ),
+            ),
 
-              Text('Oluwaferanmi Michael',
-              style: TextStyle(
-                fontSize: 37,
-                fontWeight: FontWeight.w800,
-                color: Colors.black)
-              ),
+            Padding(
+              padding: const EdgeInsets.all(42.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 53,
+                    height: 18,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).primaryColor,
+                      borderRadius: BorderRadius.circular(300)
+                      )
+                  ),
+                  
+                  SizedBox(height: 16,),
 
-              SizedBox(height: 16,),
+                  Text('Oluwaferanmi Michael',
+                  style: TextStyle(
+                    fontSize: 37,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black)
+                  ),
 
-              Text('Versatile Software Developer with 2 years of experience in Flutter programming and Software engineering. Self-directed leader with expertise in Frontend. Talented at cultivating collaborative and supportive team environment. I\'m also a Creative UI Developer with 5 years facilitating and supporting human interactions with complex systems and software. Maintains user-centric designs while adhering to prescribed interface principals and related development goals.',
-                style: TextStyle(
-                  height: 2,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w300,
-                )
-              ),
+                  SizedBox(height: 16,),
 
-              SizedBox(height: 24,),
+                  Text('Versatile Software Developer with 2 years of experience in Flutter programming and Software engineering. Self-directed leader with expertise in Frontend. Talented at cultivating collaborative and supportive team environment. I\'m also a Creative UI Developer with 5 years facilitating and supporting human interactions with complex systems and software. Maintains user-centric designs while adhering to prescribed interface principals and related development goals.',
+                    style: TextStyle(
+                      height: 2,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w300,
+                    )
+                  ),
 
-              Text('Tools',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w800
-                )),
+                  SizedBox(height: 24,),
 
-              SizedBox(height: 16,),
+                  Text('Tools',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800
+                    )),
 
-              SizedBox(
-                height: 100,
+                  SizedBox(height: 16,),
 
-                child: ListView.builder(
-                itemBuilder: (BuildContext context, int index){
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 16.0),
-                    child: Container(
-                      child: Column(
+                  SizedBox(
+                    height: 100,
+
+                    child: ListView.builder(
+                    itemBuilder: (BuildContext context, int index){
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 16.0),
+                        child: Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 12.0),
+                                child: Text('Adobe',
+                                  style: TextStyle(
+                                    fontSize: 16),),
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                children: [
+                                  Container(
+                                    width: 10,
+                                    height: 10,
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context).primaryColor,
+                                      borderRadius: BorderRadius.circular(30))
+                                    ),
+                                    Container(
+                                    width: 10,
+                                    height: 10,
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context).primaryColor,
+                                      borderRadius: BorderRadius.circular(30))
+                                    ),
+                                    Container(
+                                    width: 10,
+                                    height: 10,
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context).primaryColor,
+                                      borderRadius: BorderRadius.circular(30))
+                                    ),
+                                    Container(
+                                    width: 10,
+                                    height: 10,
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context).primaryColor,
+                                      borderRadius: BorderRadius.circular(30))
+                                    ),
+                                    Container(
+                                    width: 10,
+                                    height: 10,
+                                    decoration: BoxDecoration(
+                                      color: Theme.of(context).primaryColor,
+                                      borderRadius: BorderRadius.circular(30))
+                                    ),
+                                ],
+                              )],
+                          ),
+                          width: 128,
+                          height: 66,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black12,
+                                blurRadius: 25,
+                                spreadRadius: 5,
+                                offset: Offset(10, 10)
+                              )
+                            ]
+                          )
+                        ),
+                      );
+                    },
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: tools.length,
+                  ),),
+
+                  SizedBox(height: 24,),
+                
+                  Text('Social Skills',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800
+                    )),
+
+                  SizedBox(height: 16,),
+
+                  Wrap(spacing: 8,
+                    children: [
+                      Chip(
+                        label: Text('Good Communication'),
+                        backgroundColor: Color(0x000000),
+                        side: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                          width: 1)
+                        ,),
+                        Chip(
+                        label: Text('Team Spirit'),
+                        backgroundColor: Color(0x000000),
+                        side: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                          width: 1)
+                        ,),
+                        Chip(
+                        label: Text('Creative'),
+                        backgroundColor: Color(0x000000),
+                        side: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                          width: 1)
+                        ,),
+                        Chip(
+                        label: Text('Open Minded'),
+                        backgroundColor: Color(0x000000),
+                        side: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                          width: 1)
+                        ,),
+                        Chip(
+                        label: Text('Good Communication'),
+                        backgroundColor: Color(0x000000),
+                        side: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                          width: 1)
+                        ,),
+                        Chip(
+                        label: Text('Responsible'),
+                        backgroundColor: Color(0x000000),
+                        side: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                          width: 1)
+                        ,),
+                        Chip(
+                        label: Text('Problem Solver'),
+                        backgroundColor: Color(0x000000),
+                        side: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                          width: 1)
+                        ,),
+                        Chip(
+                        label: Text('Language Fluency'),
+                        backgroundColor: Color(0x000000),
+                        side: BorderSide(
+                          color: Theme.of(context).primaryColor,
+                          width: 1)
+                        ,),
+                    ],
+                  ),
+
+                  SizedBox(height: 24,),
+                
+                  Text('Education',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800
+                    )),
+
+                  SizedBox(height: 16,),
+                  
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                          Expanded(
+                            flex: 1,
+                            child: Text('Kwara State University',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold
+                              ),)),
+                          Text('2017-2021',
+                              style: TextStyle(
+                                fontSize: 16,))
+                        ],),
+                        Text('B.Sc Computer Science',
+                              style: TextStyle(
+                                fontSize: 12,))
+                      ],
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 12.0),
-                            child: Text('Adobe',
-                              style: TextStyle(
-                                fontSize: 16),),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Container(
-                                width: 10,
-                                height: 10,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).primaryColor,
-                                  borderRadius: BorderRadius.circular(30))
-                                ),
-                                Container(
-                                width: 10,
-                                height: 10,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).primaryColor,
-                                  borderRadius: BorderRadius.circular(30))
-                                ),
-                                Container(
-                                width: 10,
-                                height: 10,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).primaryColor,
-                                  borderRadius: BorderRadius.circular(30))
-                                ),
-                                Container(
-                                width: 10,
-                                height: 10,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).primaryColor,
-                                  borderRadius: BorderRadius.circular(30))
-                                ),
-                                Container(
-                                width: 10,
-                                height: 10,
-                                decoration: BoxDecoration(
-                                  color: Theme.of(context).primaryColor,
-                                  borderRadius: BorderRadius.circular(30))
-                                ),
-                            ],
-                          )],
                       ),
-                      width: 128,
-                      height: 66,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black12,
-                            blurRadius: 25,
-                            spreadRadius: 5,
-                            offset: Offset(10, 10)
-                          )
-                        ]
-                      )
                     ),
-                  );
-                },
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: tools.length,
-              ),),
+                    width: 345,
+                    height: 72,
+                    decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 25,
+                        spreadRadius: 5,
+                        offset: Offset(10, 10)
+                        )
+                      ]
+                    ),
+                  ),
 
-              SizedBox(height: 24,),
-            
-              Text('Social Skills',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w800
-                )),
+                  SizedBox(height: 24,),
+                
+                  Text('Industrial Experirence',
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800
+                    )),
 
-              SizedBox(height: 16,),
+                  SizedBox(height: 16,),
 
-              Wrap(spacing: 8,
-                children: [
-                  Chip(
-                    label: Text('Good Communication'),
-                    backgroundColor: Color(0x000000),
-                    side: BorderSide(
-                      color: Theme.of(context).primaryColor,
-                      width: 1)
-                    ,),
-                    Chip(
-                    label: Text('Team Spirit'),
-                    backgroundColor: Color(0x000000),
-                    side: BorderSide(
-                      color: Theme.of(context).primaryColor,
-                      width: 1)
-                    ,),
-                    Chip(
-                    label: Text('Creative'),
-                    backgroundColor: Color(0x000000),
-                    side: BorderSide(
-                      color: Theme.of(context).primaryColor,
-                      width: 1)
-                    ,),
-                    Chip(
-                    label: Text('Open Minded'),
-                    backgroundColor: Color(0x000000),
-                    side: BorderSide(
-                      color: Theme.of(context).primaryColor,
-                      width: 1)
-                    ,),
-                    Chip(
-                    label: Text('Good Communication'),
-                    backgroundColor: Color(0x000000),
-                    side: BorderSide(
-                      color: Theme.of(context).primaryColor,
-                      width: 1)
-                    ,),
-                    Chip(
-                    label: Text('Responsible'),
-                    backgroundColor: Color(0x000000),
-                    side: BorderSide(
-                      color: Theme.of(context).primaryColor,
-                      width: 1)
-                    ,),
-                    Chip(
-                    label: Text('Problem Solver'),
-                    backgroundColor: Color(0x000000),
-                    side: BorderSide(
-                      color: Theme.of(context).primaryColor,
-                      width: 1)
-                    ,),
-                    Chip(
-                    label: Text('Language Fluency'),
-                    backgroundColor: Color(0x000000),
-                    side: BorderSide(
-                      color: Theme.of(context).primaryColor,
-                      width: 1)
-                    ,),
+                  Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                          Expanded(
+                            flex: 1,
+                            child: Text('e86 Limited',
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold
+                              ),)),
+                          Text('2020-2021',
+                              style: TextStyle(
+                                fontSize: 16,))
+                        ],),
+                        Text('Sales Intern',
+                              style: TextStyle(
+                                fontSize: 12,))
+                      ],
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                      ),
+                    ),
+                    width: 345,
+                    height: 72,
+                    decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 25,
+                        spreadRadius: 5,
+                        offset: Offset(10, 10)
+                        )
+                      ]
+                    ),
+                  ),
+
+                  Image.asset('assets/DevDashatar.png'),
+
+                  SizedBox(height: 24,),
+
+                  Center(
+                    child: Text('Happy to Build',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor),),
+                  )
+
                 ],
               ),
-
-              SizedBox(height: 24,),
-            
-              Text('Education',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w800
-                )),
-
-              SizedBox(height: 16,),
-              
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                      Expanded(
-                        flex: 1,
-                        child: Text('Kwara State University',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold
-                          ),)),
-                      Text('2017-2021',
-                          style: TextStyle(
-                            fontSize: 16,))
-                    ],),
-                    Text('B.Sc Computer Science',
-                          style: TextStyle(
-                            fontSize: 12,))
-                  ],
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                  ),
-                ),
-                width: 345,
-                height: 72,
-                decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 25,
-                    spreadRadius: 5,
-                    offset: Offset(10, 10)
-                    )
-                  ]
-                ),
-              ),
-
-              SizedBox(height: 24,),
-            
-              Text('Industrial Experirence',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w800
-                )),
-
-              SizedBox(height: 16,),
-
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                      Expanded(
-                        flex: 1,
-                        child: Text('e86 Limited',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold
-                          ),)),
-                      Text('2020-2021',
-                          style: TextStyle(
-                            fontSize: 16,))
-                    ],),
-                    Text('Sales Intern',
-                          style: TextStyle(
-                            fontSize: 12,))
-                  ],
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                  ),
-                ),
-                width: 345,
-                height: 72,
-                decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black12,
-                    blurRadius: 25,
-                    spreadRadius: 5,
-                    offset: Offset(10, 10)
-                    )
-                  ]
-                ),
-              ),
-
-              Image.asset('assets/DevDashatar.png'),
-
-              SizedBox(height: 24,),
-
-              Center(
-                child: Text('Happy to Build',
-                  style: TextStyle(
-                    color: Theme.of(context).primaryColor),),
-              )
-
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
