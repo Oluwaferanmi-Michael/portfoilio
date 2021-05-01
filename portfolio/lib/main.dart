@@ -70,6 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SafeArea(
           minimum: EdgeInsets.all(42),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -112,31 +113,90 @@ class _MyHomePageState extends State<MyHomePage> {
 
               SizedBox(height: 16,),
 
-              // ListView.builder(
-              //   itemBuilder: (BuildContext context, int index){
-              //     return Container(
-              //       child: Text('$tools',
-              //         style: TextStyle(
-              //           fontSize: 16),),
-              //       width: 691,
-              //       height: 84,
-              //       decoration: BoxDecoration(
-              //         borderRadius: BorderRadius.circular(10),
-              //         boxShadow: [
-              //           BoxShadow(
-              //             color: Colors.black26,
-              //             blurRadius: 10,
-              //             spreadRadius: 5,
-              //             offset: Offset(10, 10)
-              //           )
-              //         ]
-              //       )
-              //     );
-              //   },
-              //   scrollDirection: Axis.horizontal,
-              //   itemCount: tools.length,
-              // ),
+              SizedBox(
+                height: 100,
 
+                child: ListView.builder(
+                itemBuilder: (BuildContext context, int index){
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 16.0),
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 12.0),
+                            child: Text('Adobe',
+                              style: TextStyle(
+                                fontSize: 16),),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  borderRadius: BorderRadius.circular(30))
+                                ),
+                                Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  borderRadius: BorderRadius.circular(30))
+                                ),
+                                Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  borderRadius: BorderRadius.circular(30))
+                                ),
+                                Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  borderRadius: BorderRadius.circular(30))
+                                ),
+                                Container(
+                                width: 10,
+                                height: 10,
+                                decoration: BoxDecoration(
+                                  color: Theme.of(context).primaryColor,
+                                  borderRadius: BorderRadius.circular(30))
+                                ),
+                            ],
+                          )],
+                      ),
+                      width: 128,
+                      height: 66,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black12,
+                            blurRadius: 25,
+                            spreadRadius: 5,
+                            offset: Offset(10, 10)
+                          )
+                        ]
+                      )
+                    ),
+                  );
+                },
+                shrinkWrap: true,
+
+                // padding: EdgeInsetsGeometry.infinity,
+                scrollDirection: Axis.horizontal,
+                itemCount: tools.length,
+              ),),
+
+              SizedBox(height: 16,),
             
               Text('Social Skills',
                 style: TextStyle(
@@ -186,6 +246,114 @@ class _MyHomePageState extends State<MyHomePage> {
                     ,),
                 ],
               ),
+
+              SizedBox(height: 16,),
+            
+              Text('Education',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w800
+                )),
+
+              SizedBox(height: 16,),
+              
+              Container(
+                child: Column(children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                    Expanded(
+                      flex: 1,
+                      child: Text('Kwara State University',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold
+                        ),)),
+                    Text('2017-2021',
+                        style: TextStyle(
+                          fontSize: 16,))
+                  ],),
+                  Text('B.Sc Computer Science',
+                        style: TextStyle(
+                          fontSize: 12,))
+                ],
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                ),
+                width: 345,
+                height: 72,
+                decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 25,
+                    spreadRadius: 5,
+                    offset: Offset(10, 10)
+                    )
+                  ]
+                ),
+              ),
+
+              SizedBox(height: 16,),
+            
+              Text('Industrial Experirence',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w800
+                )),
+
+              SizedBox(height: 16,),
+
+              Container(
+                child: Column(children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                    Expanded(
+                      flex: 1,
+                      child: Text('e86 Limited',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold
+                        ),)),
+                    Text('2020-2021',
+                        style: TextStyle(
+                          fontSize: 16,))
+                  ],),
+                  Text('Sales Intern',
+                        style: TextStyle(
+                          fontSize: 12,))
+                ],
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                ),
+                width: 345,
+                height: 72,
+                decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black12,
+                    blurRadius: 25,
+                    spreadRadius: 5,
+                    offset: Offset(10, 10)
+                    )
+                  ]
+                ),
+              ),
+
+              Image.asset('assets/DevDashatar.png'),
+
+              SizedBox(height: 16,),
+
+              Text('Happy to Build',
+                style: TextStyle(
+                  color: Theme.of(context).primaryColor),)
 
             ],
           ),
