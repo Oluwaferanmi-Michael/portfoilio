@@ -57,7 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
   
   
 
-  List <String> tools = [
+ 
+
+  @override
+  Widget build(BuildContext context) {
+
+     List <String> tools = [
     'Adobe Xd',
     'Microsoft Office',
     'Flutter',
@@ -67,9 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
     'Git/GitHub',
     'Python',
   ];
-
-  @override
-  Widget build(BuildContext context) {
 
     Color bg = Theme.of(context).backgroundColor;
     Color pc = Theme.of(context).primaryColor;
@@ -155,7 +157,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.only(left: 16.0),
-                                child: Text('Adobe',
+                                child: Text(tools[index],
                                   style: TextStyle(
                                     fontSize: 16),),
                               ),
